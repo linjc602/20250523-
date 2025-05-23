@@ -30,11 +30,7 @@ function modelReady() {
 }
 
 function draw() {
-  // 鏡頭反轉
-  push();
-  translate(width, 0);
-  scale(-1, 1);
-
+  // 不要鏡頭反轉，直接畫
   image(video, 0, 0, width, height);
 
   if (predictions.length > 0) {
@@ -110,6 +106,4 @@ function draw() {
     }
     endShape(CLOSE);
   }
-
-  pop();
 }
