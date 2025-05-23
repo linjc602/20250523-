@@ -105,5 +105,14 @@ function draw() {
       vertex(x, y);
     }
     endShape(CLOSE);
+
+    const extraLineIndices = [133,173,157,158,159,160,161,246,33,7,163,144,145,153,154,155];
+    stroke(0, 0, 255); // 藍色
+    strokeWeight(2);
+    for (let i = 0; i < extraLineIndices.length - 1; i++) {
+      const idxA = extraLineIndices[i];
+      const idxB = extraLineIndices[i + 1];
+      line(keypoints[idxA][0], keypoints[idxA][1], keypoints[idxB][0], keypoints[idxB][1]);
+    }
   }
 }
